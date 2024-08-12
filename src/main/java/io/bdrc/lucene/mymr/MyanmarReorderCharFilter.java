@@ -12,6 +12,12 @@ import java.util.Collections;
 import org.apache.lucene.analysis.charfilter.BaseCharFilter;
 
 public class MyanmarReorderCharFilter extends BaseCharFilter {
+    
+    // This code comes from http://unicode.org/notes/tn11/ :
+    // Hosken, M. Representing Myanmar in Unicode, Details and Examples Version 4
+    // Terms of Use of Unicode probably apply: http://www.unicode.org/copyright.html
+
+    // The code has been ported to Java by Elie Roux in 2024
 
     private static final int REORDER = 12;
     private static final int EXTENDING = 16;
