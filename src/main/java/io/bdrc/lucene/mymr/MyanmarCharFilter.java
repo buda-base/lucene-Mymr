@@ -5,13 +5,13 @@ import java.io.Reader;
 import org.apache.lucene.analysis.charfilter.MappingCharFilter;
 import org.apache.lucene.analysis.charfilter.NormalizeCharMap;
 
-public class MyanmanCharFilter extends MappingCharFilter {
+public class MyanmarCharFilter extends MappingCharFilter {
     
-    public MyanmanCharFilter(final Reader in) {
+    public MyanmarCharFilter(final Reader in) {
         super(getNormalizeCharMapCached(false), in);
     }
     
-    public MyanmanCharFilter(final Reader in, final boolean lenient, final boolean oldtib) {
+    public MyanmarCharFilter(final Reader in, final boolean lenient) {
         super(getNormalizeCharMapCached(lenient), in);
     }
     
