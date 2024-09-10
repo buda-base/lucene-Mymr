@@ -33,7 +33,6 @@ public class MyanmarCharFilter extends MappingCharFilter {
             builder.add("\u1029\u1031\u102C\u103A", "\u102A"); // ဩော် -> ဪ
             builder.add("\u101E\u103C", "\u1029"); // သြ -> ဩ
             builder.add("\u1005\u103B", "\u1008"); // စျ -> ဈ
-            builder.add("\u1005\u103B", "\u1008"); // စျ -> ဈ
             // digits
             builder.add("၀", "0");
             builder.add("၁", "1");
