@@ -110,10 +110,10 @@ public class MyanmarReorderCharFilter extends BaseCharFilter {
                             hit = false;
                             break;
                         }
-                        if (hit) {
-                            length = seq[0] + 1;
-                            order = seq[1];
-                        }
+                    }
+                    if (hit) {
+                        length = seq[0] + 1;
+                        order = seq[1];
                     }
                 }
             }
@@ -161,7 +161,7 @@ public class MyanmarReorderCharFilter extends BaseCharFilter {
             substr.append(text.charAt(start + idx));
         }
 
-        return text.substring(0, start) + substr.toString() + text.substring(end);
+        return substr.toString();
     }
 
     @Override
@@ -200,8 +200,7 @@ public class MyanmarReorderCharFilter extends BaseCharFilter {
                 List<Integer> flags = new ArrayList<>();
                 List<Integer> orders = new ArrayList<>();
 
-                flags.add(vals[1]);
-                orders.add(vals[0]);
+                for (int k = 0; k < vals[2]; k++) { flags.add(vals[1]); orders.add(vals[0]); }
                 index += vals[2];
 
                 while (index < text.length()) {
@@ -209,16 +208,15 @@ public class MyanmarReorderCharFilter extends BaseCharFilter {
                     if (vals[0] == 0) {
                         break;
                     }
-                    flags.add(vals[1]);
-                    orders.add(vals[0]);
+                    for (int k = 0; k < vals[2]; k++) { flags.add(vals[1]); orders.add(vals[0]); }
                     index += vals[2];
                 }
 
-                String sortedText = canonSubsort(text, 
+                String sortedCluster = canonSubsort(text,
                     orders.stream().mapToInt(i -> i).toArray(),
-                    flags.stream().mapToInt(i -> i).toArray(), 
+                    flags.stream().mapToInt(i -> i).toArray(),
                     start, index);
-                result.append(sortedText);
+                result.append(sortedCluster);
             } else {
                 result.append(text.charAt(index));
                 index++;

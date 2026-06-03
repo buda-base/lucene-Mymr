@@ -4,7 +4,7 @@
     <groupId>io.bdrc.lucene</groupId>
     <artifactId>lucene-Mymr</artifactId>
     <packaging>jar</packaging>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <name>lucene-Mymr</name>
     <description>Lucene analyzer for the Myanmar script</description>
     <url>https://github.com/buda-base/lucene-bo</url>
